@@ -32,6 +32,7 @@ const PostListRated: FC<IPostListRated> = async ({ movies }) => {
             vote_average={item.vote_average}
             poster_path={item.poster_path}
             key={item.id}
+            tags={item.tags}
           />
         ))}
       </div>
