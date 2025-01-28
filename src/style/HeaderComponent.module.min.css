@@ -1,0 +1,14 @@
+.header {
+  padding-block: 25px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  background-color: #F7F7F7;
+}
+
+.active {
+  color: blue;
+}
+.active ::after {
+  background-color: blue;
+}/*# sourceMappingURL=HeaderComponent.module.min.css.map */

@@ -1,0 +1,108 @@
+
+.card{
+    max-width: 450px;
+    box-shadow: 5px 5px 5px 5px gray;
+    border-radius: 10px; 
+    position: relative;
+    & .cardRow{
+        display: flex;
+        column-gap: 20px;
+        img{
+            align-self: center;
+            height: 280px;
+            width: 180px;
+            background-color: #fff;
+;
+        }
+        & .textRow{
+            display: flex;
+            flex-direction: column;
+            row-gap: 7px;
+            padding-top: 10px;
+            padding-right: 20px;
+            .title{
+                font-size: 20;
+                font-weight: 400;
+            }
+            .date{
+                opacity: 0.5;
+            }
+        }
+    }
+}
+.tagRow{
+    display: flex;
+    flex-direction: row;
+    column-gap: 7px;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px;
+    max-width: 250px;
+    span{
+        border: 1px solid rgb(139, 139, 139);
+        background-color: rgb(196, 196, 196);
+        padding: 2px 5px;
+        border-radius: 3px;
+
+    }
+}
+.desc{
+    height: 100px;
+
+    line-clamp: 3;    /* Добавляет многоточие вместо скрытого текста */
+    width: 200px;
+    display: -webkit-box; /* Используется для создания контейнера с ограничением линий */
+    -webkit-line-clamp: 3; /* Количество строк, после которых будет обрезка */
+    -webkit-box-orient: vertical; /* Ориентация контейнера */
+    overflow-y: hidden; /* Скрытие текста за пределами блока */
+    text-overflow: ellipsis; /* Добавление многоточия */
+    line-height: 1.5; /* Высота строки (можно настроить под стиль текста) */
+
+}
+
+@media(max-width: 640px){
+
+    .card{
+        padding: 6px 10px;
+        position: relative;
+        & .cardRow{
+
+            img{
+                width: 60px;
+                height: 90px;
+                // align-self: flex-start;
+                position: absolute;
+                top: 6px;
+                left: 10px;
+            }
+            & .textRow{
+                padding-top: 0;
+                width: 300px;
+                .title{
+                    padding-left: 75px;
+                    // max-width: 70px;
+                    line-clamp: 2;    /* Добавляет многоточие вместо скрытого текста */
+                    display: -webkit-box; /* Используется для создания контейнера с ограничением линий */
+                    -webkit-line-clamp: 1; /* Количество строк, после которых будет обрезка */
+                    -webkit-box-orient: horizontal; /* Ориентация контейнера */
+                    overflow-y: hidden; /* Скрытие текста за пределами блока */
+                    text-overflow: ellipsis; /* Добавление многоточия */
+                    line-height: 1.5; /* Высота строки (можно настроить под стиль текста) */
+
+
+                }
+                .date{
+                    padding-left: 75px;
+
+                }
+                .tagRow{
+                    padding-left: 75px;
+                }
+         
+            }
+        }
+    }
+    .desc{
+        width: 100%;
+    }
+}

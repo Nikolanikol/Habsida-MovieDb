@@ -1,0 +1,36 @@
+.red {
+  border-color: #E90000;
+}
+
+.orange {
+  border-color: #E97E00;
+}
+
+.yellow {
+  border-color: #E9D100;
+}
+
+.green {
+  border-color: #66E900;
+}
+
+.voteItem {
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.voteWrapper {
+  display: inline-block;
+  position: absolute;
+  top: 45px;
+  right: 15px;
+}
+
+@media (max-width: 640px) {
+  .voteWrapper {
+    top: 40px;
+    right: 10px;
+  }
+}/*# sourceMappingURL=VoteAverageComponent.module.min.css.map */
