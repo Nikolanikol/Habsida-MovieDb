@@ -58,19 +58,19 @@ const PostListComponent: FC = () => {
     fetchMovies(currentPage);
   }, [currentPage]);
 
-  if (!movies || movies?.results.length == 0 || movies == undefined) {
-    return (
-      <div
-        style={{
-          margin: '100px 50px 50px 0px',
-          display: 'block',
-          paddingLeft: 150,
-        }}
-      >
-        Dont founded films
-      </div>
-    );
-  }
+  //   if (!movies || movies?.results.length == 0 || movies == undefined) {
+  //     return (
+  //       <div
+  //         style={{
+  //           margin: '100px 50px 50px 0px',
+  //           display: 'block',
+  //           paddingLeft: 150,
+  //         }}
+  //       >
+  //         Dont founded films
+  //       </div>
+  //     );
+  //   }
   return (
     <div className={style.postListWrapper}>
       <input
@@ -83,26 +83,30 @@ const PostListComponent: FC = () => {
         <Spinner />
       ) : (
         <div className={style.postList}>
-          {movies.results.map((item) => (
-            <PostComponent
-              title={item.title}
-              release_date={item.release_date}
-              genre_ids={item.genre_ids}
-              id={item.id}
-              overview={item.overview}
-              vote_average={item.vote_average}
-              poster_path={item.poster_path}
-              key={item.id}
-              tags={tags}
-            />
-          ))}
+          {!movies?.results.length ? (
+            <div>not founded</div>
+          ) : (
+            movies?.results.map((item) => (
+              <PostComponent
+                title={item.title}
+                release_date={item.release_date}
+                genre_ids={item.genre_ids}
+                id={item.id}
+                overview={item.overview}
+                vote_average={item.vote_average}
+                poster_path={item.poster_path}
+                key={item.id}
+                tags={tags}
+              />
+            ))
+          )}
         </div>
       )}
       <Pagination
         align="center"
         pageSize={limit}
         current={currentPage}
-        total={movies.total_results}
+        total={movies?.total_results}
         onChange={(page) => setCurrentPage(page)} // Обновляем текущую страницу
       />
     </div>
